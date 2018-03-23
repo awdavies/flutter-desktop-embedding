@@ -17,7 +17,7 @@
 #include <flutter/flutter_embedder.h>
 
 int main(int argc, char **argv) {
-  std::string flutter_example_root = "../example_flutter";
+  std::string flutter_example_root = "../../flutter/examples/flutter_gallery";
   std::string flutter_git_root = "../../flutter";
   if (!glfwInit()) {
     std::cout << "Couldn't init GLFW";

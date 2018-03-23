@@ -27,6 +27,7 @@
 #include <flutter/embedder_extensions.h>
 #include <flutter/file_chooser_plugin.h>
 #include <flutter/plugin_handler.h>
+#include <flutter/text_input_plugin.h>
 
 static_assert(FLUTTER_ENGINE_VERSION == 1, "");
 
@@ -262,6 +263,7 @@ GLFWwindow *CreateFlutterWindow(size_t initial_width, size_t initial_height,
   FlutterEmbedderStatePtr state = new FlutterEmbedderState();
   state->plugin_handler = std::make_unique<PluginHandler>();
   state->plugin_handler->AddPlugin(std::make_unique<FileChooserPlugin>());
+  state->plugin_handler->AddPlugin(std::make_unique<TextInputPlugin>());
   state->engine = flutter_engine_run_result;
   glfwSetWindowUserPointer(window, state);
   int width, height;
